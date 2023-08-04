@@ -1,0 +1,30 @@
+/* <div className="header"> 
+<div className="navigationItems">
+    <a>Logo</a>
+    <a>Explore</a>
+    <a>Problems</a>
+    <a>Discuss</a>
+</div>
+<div className="loginItems">
+    <a>Premium</a>
+    <a>Register</a>
+    <a>Sign In</a>
+</div>
+</div> */
+
+.header{
+    display: flex;
+    flex: 1;
+    align-items:center;
+    padding: 20px 20px 30px 30px;
+    justify-content: space-between;
+}
+
+
+.navigationItems, .loginItems{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-around;
+}
+
