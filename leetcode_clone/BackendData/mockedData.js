@@ -1,6 +1,9 @@
-// This actually comes from a database
-const PROBLEMS = [
+// Soon we will build the backend server 
+// where we actually get this data from a database.
+
+export const PROBLEMS = [
     {
+        ProblemID : '1',
         Status:"AC",
         Title:"two sum",
         Solution:"yy",
@@ -10,6 +13,7 @@ const PROBLEMS = [
 
     },
     {
+        ProblemID : '2',
         Status:"WA",
         Title:"3 sum",
         Solution:"yy",
@@ -19,6 +23,7 @@ const PROBLEMS = [
 
     },
     {
+        ProblemID : '3',
         Status:"TLE",
         Title:"ARRAYS",
         Solution:"yy",
@@ -28,6 +33,7 @@ const PROBLEMS = [
 
     },
     {
+        ProblemID : '4',
         Status:"AC",
         Title:"MATRICES",
         Solution:"yy",
@@ -37,6 +43,7 @@ const PROBLEMS = [
 
     },
     {
+        ProblemID : '5',
         Status:"AC",
         Title:"DP",
         Solution:"yy",
@@ -46,6 +53,7 @@ const PROBLEMS = [
 
     },
     {
+        ProblemID : '6',
         Status:"AC",
         Title:"two sum",
         Solution:"yy",
@@ -55,6 +63,7 @@ const PROBLEMS = [
 
     },
     {
+        ProblemID : '7',
         Status:"AC",
         Title:"two sum",
         Solution:"yy",
@@ -64,6 +73,7 @@ const PROBLEMS = [
 
     },
     {
+        ProblemID : '8',
         Status:"AC",
         Title:"two sum",
         Solution:"yy",
@@ -73,6 +83,27 @@ const PROBLEMS = [
 
     },
     {
+        ProblemID : '9',
+        Status:"AC",
+        Title:"two sum",
+        Solution:"yy",
+        Acceptance:"45%",
+        Difficulty:"High",
+        Frequency:"34"
+
+    },
+    {
+        ProblemID : '10',
+        Status:"AC",
+        Title:"two sum",
+        Solution:"yy",
+        Acceptance:"45%",
+        Difficulty:"High",
+        Frequency:"34"
+
+    },
+    {
+        ProblemID : '11',
         Status:"AC",
         Title:"two sum",
         Solution:"yy",
@@ -83,6 +114,12 @@ const PROBLEMS = [
     },
 ];
 
-export default function getProblemsData(){
-    return PROBLEMS;
+// problems per page NOTE: > 1
+export var  PROBLEMS_PER_PAGE = 4; 
+export default function getProblemsData(page_num){
+    var problemsPerPage =[];
+    for(var i=page_num*PROBLEMS_PER_PAGE;i<(page_num*PROBLEMS_PER_PAGE+PROBLEMS_PER_PAGE) && (i<PROBLEMS.length);i++){
+        problemsPerPage.push(PROBLEMS[i]);
+    }
+    return problemsPerPage;
 }
