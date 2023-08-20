@@ -1,5 +1,15 @@
+import { Link } from 'react-router-dom';
 import '../styling/Header.css'
+import { useState } from 'react';
 function Header() {
+    const [userlogged, setUserLogged] = useState(localStorage.getItem('userLogin'))
+    console.log(localStorage.getItem('userLogin'));
+
+    const logout = () => {
+        setUserLogged('false')
+        localStorage.setItem('userLogin', 'false')
+    }
+
     return (
         <div className="header">
             <div className="navigationItems">
@@ -8,11 +18,19 @@ function Header() {
                 <p>Problems</p>
                 <p>Discuss</p>
             </div>
-            <div className="loginItems">
-                <button>Premium</button>
-                <button>Register</button>
-                <button>Sign In</button>
-            </div>
+            {
+                userlogged === 'true' ?
+                    <div>
+                        <b>Hello,{localStorage.getItem('username')}</b>
+                        <button onClick={logout} >Logout</button>
+                    </div>
+                    :
+                    <div className="loginItems">
+                        <button>Premium</button>
+                        <Link to={'/signup'}  >Register</Link >
+                        <Link to={'/signin'}>SignIn</Link >
+                    </div>
+            }
         </div>
     );
 }
