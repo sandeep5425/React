@@ -1,8 +1,28 @@
-# React + Vite
+**LeetCode clone**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Project Setup:**
 
-Currently, two official plugins are available:
+1.Clone this repo.
+```
+git clone https://github.com/sandeep5425/React.git
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2.Go inside folder leetcode_clone
+```
+cd leetcode_clone
+```
+
+3.Install all the dependencies
+```
+npm install
+```
+
+4.Run the application.
+```
+npm run dev
+```
+
+5.Open the url in the browser.
+```
+http://localhost:5173/
+```
